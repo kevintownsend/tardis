@@ -9,3 +9,6 @@ libtardis.a :
 release :
 	cp libtardis.a ${HOME}/lib/.
 	cp tardis.h ${HOME}/include/.
+
+clean:
+	rm *.o *.a

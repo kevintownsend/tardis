@@ -31,7 +31,7 @@ int markTime(){
     return 0;
 }
 
-int returnTardis(){
+double returnTardis(){
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &(timeArr[timeStops].ts));
     gettimeofday(&(timeArr[timeStops++].tv),NULL);
     for(int i = 0; i < timeStops - 1; i++){
@@ -42,5 +42,7 @@ int returnTardis(){
         t2 = timeArr[i + 1].ts.tv_sec + (timeArr[i + 1].ts.tv_nsec/1000000000.0);
         cerr << "Process time: " << (t2 - t1) << " seconds" << endl;
     }
-    return 0;
+    double t1 = timeArr[0].ts.tv_sec + (timeArr[0].ts.tv_nsec/1000000000.0);
+    double t2 = timeArr[timeStops - 1].ts.tv_sec + (timeArr[timeStops - 1].ts.tv_nsec/1000000000.0);
+    return (t2 - t1);
 }

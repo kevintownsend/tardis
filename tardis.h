@@ -4,5 +4,5 @@ int stealTardis();
 
 int markTime();
 
-int returnTardis();
+double returnTardis();
 
